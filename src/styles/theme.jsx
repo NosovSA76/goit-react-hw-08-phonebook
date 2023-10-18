@@ -1,14 +1,16 @@
 export const theme = {
   colors: {
-    backmaine: '#c9f0e7',
-    backnorm: '#76bbe8',
-    backhover: '#1ddb16',
-    backhoverSecond: '#8B0000'
+    black: '#000000',
+    white: '#ffffff',
+    primary: '#608B38',
+    background: '#E0E7D9',
+    accent: '#FFF4F0',
+    muted: '#B7BFB0',
   },
-  space: [0, 2, 4, 8, 16, 32, 64, 158, 256, 512],
+  space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
     body: 'system-ui, sans-serif',
-    heading: 'Roboto',
+    heading: 'Lora, cursive',
     monospace: 'Menlo, monospace',
   },
   fontSizes: {
@@ -20,9 +22,7 @@ export const theme = {
   },
   fontWeights: {
     normal: 400,
-    semiBold: 600,
     bold: 700,
-    bolder: 900,
   },
   lineHeights: {
     body: 1.5,
@@ -30,16 +30,15 @@ export const theme = {
   },
   borders: {
     none: 'none',
-    normal: '.1px solid #80808042',
+    normal: '1px solid',
   },
   radii: {
     none: '0',
     normal: '4px',
-    medium: '8px',
     round: '50%',
   },
-    shadows: {
-    textShadow: '0 0.4px 0.4px #fff',
-    boxShadow: '#8E9AAF 8px 8px 5px 0px',
+  shadows: {
+    textShadow: '0 -0.4px 0.4px #ffffff, 0.4px 0.4px 0.4px #00000031',
+    boxShadow: '-1px -1px 1px #ffffff31, 1px 1px 1px #00000031',
   },
 };

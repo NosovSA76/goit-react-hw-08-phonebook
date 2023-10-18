@@ -1,24 +1,24 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { ThemeProvider } from "styled-components";
-import { Provider } from "react-redux";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from "./redux/store";
-import { theme } from "./theme";
-import { App } from "./App";
+import { App } from 'components/App';
+import { store, persistor } from './redux/store';
+import { ThemeProvider } from 'styled-components';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+import { theme } from 'styles/theme';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/ContactBook">
-    <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
-      </PersistGate>
-    </Provider>
+    <BrowserRouter basename="/goit-react-hw-08-phonebook">
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </PersistGate>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

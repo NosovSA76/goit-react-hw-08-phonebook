@@ -1,11 +1,12 @@
-import { createSelector } from "@reduxjs/toolkit";
+import { createSelector } from '@reduxjs/toolkit';
 
-
+// auth
 export const selectToken = state => state.auth.token;
 export const selectIsLogin = state => state.auth.isLoggedIn;
 export const selectUser = state => state.auth.user;
 export const selectIsRefreshing = state => state.auth.isRefreshing;
-// export const selectContacts = ({ contacts }) => contacts.items;
+
+// contacts
 export const selectIsLoading = ({ contacts }) => contacts.isLoading;
 export const selectError = ({ contacts }) => contacts.error;
 export const selectFilter = ({ filter }) => filter;
@@ -21,9 +22,9 @@ export const selectFilteredContacts = createSelector(
     }
     const normalizedFilter = filter.toLowerCase();
     const filteredContacts = contacts.filter(
-      ({ name, phone }) =>
+      ({ name, number }) =>
         name.toLowerCase().trim().includes(normalizedFilter) ||
-        (phone && phone.trim().includes(normalizedFilter))
+        number.trim().includes(normalizedFilter)
     );
     return filteredContacts;
   }

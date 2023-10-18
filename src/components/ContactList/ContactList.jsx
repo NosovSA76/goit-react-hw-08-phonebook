@@ -1,4 +1,4 @@
-import { useEffect, Fragment } from 'react';
+import {useEffect, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // toastify
@@ -48,7 +48,8 @@ export const ContactList = () => {
   const filteredContacts = getFilteredContacts(result);
 
   return (
-    <>
+
+        <>
       {isLoading && contacts?.length === 0 && <Loader />}
       {error && !isLoading && <div>Ooops, error...</div>}
       {!filteredContacts?.length && !error && !isLoading && (

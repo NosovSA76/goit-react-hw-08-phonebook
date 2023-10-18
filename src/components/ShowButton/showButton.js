@@ -10,10 +10,10 @@ export const ShowButton = ({ contactCount, onButtonChange }) => {
   };
 
   return (
-    contactCount > 0 && (
+
       <VisibleNoVisibleButton onClick={handleButtonClick}>
         {isHidden ? "Show up" : "Hide"}
       </VisibleNoVisibleButton>
-    )
+
   );
 };

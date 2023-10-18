@@ -1,14 +1,12 @@
+import React, { useState } from 'react';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 import { ContactForm } from 'components/ContactForm/ContactForm';
-import { ContactList } from 'components/ContactList/ContactList';
-import { Filter } from 'components/Filter/Filter';
 import { Section } from 'components/Section/Section';
-import { Title } from 'components/Title/Title';
+import { ContactsBlock } from 'components/ContactsBlock/ContactsBlock';
 
 const defaultTheme = createTheme({
   palette: {
@@ -22,18 +20,22 @@ const defaultTheme = createTheme({
 });
 
 const Contacts = () => {
+  const [isContactFormVisible, setIsContactFormVisible] = useState(true);
+
+  const toggleContactFormVisibility = () => {
+    setIsContactFormVisible(!isContactFormVisible);
+  };
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid
         container
         component="main"
         sx={{
-          backgroundImage: `url("https://ik.imagekit.io/irinavn2011/phone.jpg?updatedAt=1684367039883")`,
+          backgroundImage: `url("https://ik.imagekit.io/nosovsa/4542fd3fcab548b8367a80698e0e6318.jfif?updatedAt=1697551235248")`,
           backgroundRepeat: 'no-repeat',
-          backgroundColor: t =>
-            t.palette.mode === 'light'
-              ? t.palette.grey[50]
-              : t.palette.grey[900],
+          backgroundColor: (t) =>
+            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
@@ -66,10 +68,11 @@ const Contacts = () => {
           >
             <Grid container spacing={2}>
               <Section title="PhoneBook">
-                <ContactForm />
-                <Title title="Contacts" />
-                <Filter />
-                <ContactList />
+                {isContactFormVisible && <ContactForm />}
+                <ContactsBlock
+                  isContactFormVisible={isContactFormVisible}
+                  toggleContactFormVisibility={toggleContactFormVisibility}
+                />
               </Section>
             </Grid>
           </Box>

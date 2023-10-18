@@ -26,7 +26,7 @@ const Home = () => {
         component="main"
         sx={{
           height: '100vh',
-          backgroundImage: `url("https://ik.imagekit.io/irinavn2011/mobile-phone-1572901.jpg?updatedAt=1684181964478")`,
+          backgroundImage: `url("https://ik.imagekit.io/nosovsa/phonebook.jpg?updatedAt=1697549779590")`,
           backgroundRepeat: 'no-repeat',
           backgroundColor: t =>
             t.palette.mode === 'light'
@@ -64,9 +64,7 @@ const Home = () => {
             <Grid container spacing={2}>
               <Section title="Welcome to Phonebook!">
                 <Advertising
-                  text="PhoneBook app is an easy to use contact manager app that gives
-                  you facility of saving and viewing your contacts, so that you
-                  never lose your contacts. Try it today!"
+                  text="PhoneBook is an easy-to-use contact management app, stay in touch with your loved ones, don't just rely on your memory!"
                 />
               </Section>
             </Grid>

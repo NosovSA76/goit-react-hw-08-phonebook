@@ -67,7 +67,7 @@ export default function Register() {
         component="main"
         sx={{
           height: '100vh',
-          backgroundImage: `url("https://ik.imagekit.io/irinavn2011/mobile-phone-1572901.jpg?updatedAt=1684181964478")`,
+          backgroundImage: `url("https://ik.imagekit.io/nosovsa/propyska.jpg?updatedAt=1697550739394")`,
           backgroundRepeat: 'no-repeat',
           backgroundColor: t =>
             t.palette.mode === 'light'

@@ -62,7 +62,7 @@ export default function Login() {
         component="main"
         sx={{
           height: '100vh',
-          backgroundImage: `url("https://ik.imagekit.io/irinavn2011/mobile-phone-1917737.jpg?updatedAt=1684182004004")`,
+          backgroundImage: `url("https://ik.imagekit.io/nosovsa/1683232597_14.jpg?updatedAt=1697550739861")`,
           backgroundRepeat: 'no-repeat',
           backgroundColor: t =>
             t.palette.mode === 'light'

@@ -1,11 +1,11 @@
-import { createSlice, isAnyOf } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 
 import {
   fetchContacts,
   addContact,
   deleteContact,
   changeContact,
-} from "./contacts-operations";
+} from './contacts-operations';
 
 const initialState = {
   items: [],
@@ -21,14 +21,14 @@ const customArrThunks = [
 ];
 
 const status = {
-  pending: "pending",
-  fulfilled: "fulfilled",
-  rejected: "rejected",
+  pending: 'pending',
+  fulfilled: 'fulfilled',
+  rejected: 'rejected',
 };
 
-const fn = (status) => customArrThunks.map((el) => el[status]);
+const fn = status => customArrThunks.map(el => el[status]);
 
-const handlePending = (state) => {
+const handlePending = state => {
   state.isLoading = true;
   state.error = null;
 };
@@ -38,7 +38,7 @@ const handleRejected = (state, { payload }) => {
   state.error = payload;
 };
 
-const handleFulfilled = (state) => {
+const handleFulfilled = state => {
   state.isLoading = false;
   state.error = null;
 };
@@ -63,9 +63,9 @@ const handleFulfilledChange = (state, { payload }) => {
 };
 
 const contactsSlice = createSlice({
-  name: "contacts",
+  name: 'contacts',
   initialState,
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     const { pending, fulfilled, rejected } = status;
     builder
       .addCase(fetchContacts.fulfilled, handleFulfilledGet)
